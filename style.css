@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+.score-board {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.game-area {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(
+        to bottom,
+        #87CEEB 0%,
+        #87CEEB 60%,
+        #90EE90 60%,
+        #90EE90 100%
+    );
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.meerkat {
+    width: 120px;
+    height: 200px;
+    background: url('meerkat.svg') no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease;
+}
+
+.meerkat.happy {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-20px); }
+}
+
+.food-tray {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.food-item {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-item:hover {
+    transform: translateY(-2px);
+    background-color: #f0f0f0;
+}
+
+.info-panel {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.info-panel h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.info-panel p {
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        padding: 1rem;
+    }
+    
+    .game-area {
+        height: 300px;
+    }
+    
+    .meerkat {
+        width: 80px;
+        height: 140px;
+    }
+    
+    .food-item {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
